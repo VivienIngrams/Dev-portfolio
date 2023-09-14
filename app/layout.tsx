@@ -1,5 +1,6 @@
 import "./globals.css";
 import { PT_Sans, Playfair_Display, Bodoni_Moda } from "next/font/google";
+import { Navbar } from "./components/Navbar";
 
 const pt = PT_Sans({
   weight: ["400"],
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body
         className={`min-h-screen ${moda.variable} ${pt.variable} ${playfair.variable}`}
       >
+      <Navbar />
         {children}
       </body>
     </html>
