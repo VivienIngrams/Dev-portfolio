@@ -32,11 +32,11 @@ export const Navbar: React.FC = () => {
       className="fixed left-0 top-0 w-full z-10 ease-in duration-300"
     >
       <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
-        <Link href="/">
-          <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
-            Vivien
+        {/* <Link href="/">
+          <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl font-moda">
+            V
           </h1>
-        </Link>
+        </Link> */}
         <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
           <li className="p-4">
             <Link href="/">Home</Link>
@@ -45,7 +45,7 @@ export const Navbar: React.FC = () => {
             <Link href="/about">About</Link>
           </li>
           <li className="p-4">
-            <Link href="/portfolio">Portfolio</Link>
+            <Link href="/work">Work</Link>
           </li>
           <li className="p-4">
             <Link href="/contact">Contact</Link>
@@ -81,10 +81,10 @@ export const Navbar: React.FC = () => {
               <Link href="/">Home</Link>
             </li>
             <li className="p-4 text-4xl hover:text-gray-500">
-              <Link href="/about">Portfolio</Link>
+              <Link href="/about">About</Link>
             </li>
             <li className="p-4 text-4xl hover:text-gray-500">
-              <Link href="/portfolio">About</Link>
+              <Link href="/work">Work</Link>
             </li>
             <li className="p-4 text-4xl hover:text-gray-500">
               <Link href="/contact">Contact</Link>
