@@ -26,7 +26,8 @@ export const Work: React.FC<WorkProps> = ({ work }) => {
   }
 
   return (
-    <div id="work" className="max-w-[1240px] mx-auto pb-20">
+    <div className=" p-5 z-[2] bg-black mt-[-10rem] text-white font-pt">
+    <div id="work" className="max-w-[1240px] mx-auto p-20">
       <h2 className="text-2xl font-bold text-center p-4">Work</h2>
 
       <div className="relative flex justify-center p-4">
@@ -58,6 +59,6 @@ export const Work: React.FC<WorkProps> = ({ work }) => {
           </div>
         ))}
       </div>
-    </div>
+    </div></div>
   );
 };
