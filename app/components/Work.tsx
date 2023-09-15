@@ -2,7 +2,7 @@
 
 import { WorkDataItem } from "./WorkData";
 import Image from "next/image";
-import {FaArrowCircleLeft, FaArrowCircleRight} from 'react-icons/fa'
+import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 
 import { useState } from "react";
 
@@ -26,9 +26,10 @@ export const Work: React.FC<WorkProps> = ({ work }) => {
   }
 
   return (
-    <div id="work">
-      <h2>Work</h2>
-      <div>
+    <div id="work" className="max-w-[1240px] mx-auto pb-20">
+      <h2 className="text-2xl font-bold text-center p-4">Work</h2>
+
+      <div className="relative flex justify-center p-4">
         {work.map((w, i) => (
           <div
             key={i}
@@ -36,8 +37,11 @@ export const Work: React.FC<WorkProps> = ({ work }) => {
               i === current ? "opacity-[1] ease-in duration-1000" : "opacity-0"
             }
           >
-            <div className="relative flex justify-center p-4"> 
-            <FaArrowCircleLeft onClick={prevWorkImage} className ='absolute top-[50%] left-[50px] text-white/50 cursor-pointer select-none z-[2]' size={50}/>
+            <FaArrowCircleLeft
+              onClick={prevWorkImage}
+              className="absolute top-[50%] left-[50px] text-white/50 cursor-pointer select-none z-[2]"
+              size={50}
+            />
             {i === current && (
               <Image
                 src={w.image}
@@ -46,8 +50,11 @@ export const Work: React.FC<WorkProps> = ({ work }) => {
                 height={200}
               />
             )}
-                        <FaArrowCircleRight onClick={nextWorkImage} className ='absolute top-[50%] right-[50px] text-white/50 cursor-pointer select-none z-[2]' size={50}/>
-</div>
+            <FaArrowCircleRight
+              onClick={nextWorkImage}
+              className="absolute top-[50%] right-[50px] text-white/50 cursor-pointer select-none z-[2]"
+              size={50}
+            />
           </div>
         ))}
       </div>
