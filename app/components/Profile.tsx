@@ -27,8 +27,8 @@ const Profile: FC<ProfileProps> = ({ heading, message }) => {
   return (
    
     <div
-    className={`min-h-screen flex items-center justify-center p-5 z-[2] text-white font-pt ${
-      scrolled ? "opacity-0" : "opacity-50 ease-out"
+    className={`min-h-screen flex items-center justify-center  z-[2] text-white font-pt ${
+      scrolled ? "opacity-20" : "opacity-80 ease-out"
     }`}
   >
         <h2 className="text-5xl font-bold font-moda">{heading}</h2>

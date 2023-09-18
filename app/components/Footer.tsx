@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
       style={{ backgroundColor: `${color}` }}
       className="fixed left-0 bottom-0 w-full z-10 ease-in duration-300"
     >
-      <div className="max-w-[1240px] text-sm m-auto flex justify-center items-center p-4 text-white">
+      <div className="max-w-[1240px] text-xs m-auto flex justify-center items-center p-4 text-white">
         <ul style={{ color: `${textColor}` }} >
           <button className="p-1 m-1 border">Dark</button>
           <button className="p-1 m-1 border">Light</button>
