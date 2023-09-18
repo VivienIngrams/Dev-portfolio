@@ -14,7 +14,7 @@ html {
   background-image: ('https://images.unsplash.com/photo-1608114759160-ad0b1bac35b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1936&q=80');
 }
 
-.work-overlay {
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -22,9 +22,8 @@ html {
   bottom: 0;
   background: linear-gradient(
     to bottom,
-    rgba(6, 76, 57, 0.3), /* Dark emerald green with transparency */
+    rgba(6, 76, 57, 0.4) 30%, /* Dark emerald green with 0.5 opacity at the top (adjust as needed) */
+    rgba(6, 76, 57, 0.3) 90%, /* Dark emerald green with 0.3 opacity in the middle (adjust as needed) */
     transparent /* Fully transparent at the bottom */
   );
-  /* z-index: 2;  */
-  pointer-events: none; /* Allow clicks to pass through to the content */
 }

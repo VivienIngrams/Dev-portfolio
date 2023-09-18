@@ -4,7 +4,7 @@ import { WorkDataItem } from "./WorkData";
 import Image from "next/image";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface WorkProps {
   work: WorkDataItem[];
@@ -14,23 +14,36 @@ export const Work: React.FC<WorkProps> = ({ work }) => {
   const [current, setCurrent] = useState(0);
   const length = work.length;
 
-  const nextWorkImage = () => {
+
+
+
+  useEffect(() => {
+      const nextWorkImage = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
-  const prevWorkImage = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
+  const handleMouseWheel = (event: WheelEvent) => {
+      if (event.deltaY > 0) {
+        // Scrolling down
+        nextWorkImage();
+      }
+    };
+
+    window.addEventListener("wheel", handleMouseWheel);
+
+    return () => {
+      window.removeEventListener("wheel", handleMouseWheel);
+    };
+  }, [current, length]);
 
   if (!Array.isArray(work) || work.length <= 0) {
     return null;
   }
 
   return (
-    <div className="relative w-screen">
-    <div className="work-overlay"/>
-    <div className=" z-[2] text-white font-pt" />
-    <div id="work" className="max-w-[1240px] mx-auto mb-20 sm:p-20">
-      <h2 className="text-2xl font-bold text-center text-white p-4">Work</h2>
+    <div className=" sm:p-5 z-[2] mt-[10rem] text-white font-pt">
+
+    <div id="work" className="max-w-[1240px] mx-auto mb-20 sm:mb-0 2xl:mb-20">
+      <h2 className="text-2xl font-bold text-center p-4">Work</h2>
 
       <div className="relative flex justify-center p-4">
         {work.map((w, i) => (
@@ -40,11 +53,7 @@ export const Work: React.FC<WorkProps> = ({ work }) => {
               i === current ? "opacity-[1] ease-in duration-1000" : "opacity-0"
             }
           >
-            <FaArrowCircleLeft
-              onClick={prevWorkImage}
-              className="absolute top-[50%] left-[50px] text-white/50 cursor-pointer select-none z-[2]"
-              size={50}
-            />
+          
             {i === current && (
               <Image
                 src={w.image}
@@ -53,11 +62,7 @@ export const Work: React.FC<WorkProps> = ({ work }) => {
                 height={200}
               />
             )}
-            <FaArrowCircleRight
-              onClick={nextWorkImage}
-              className="absolute top-[50%] right-[50px] text-white/50 cursor-pointer select-none z-[2]"
-              size={50}
-            />
+         
           </div>
         ))}
       </div>
