@@ -26,7 +26,7 @@ export const Work: React.FC<WorkProps> = ({ work }) => {
   }
 
   return (
-    <div className=" p-5 z-[2] bg-black mt-[-10rem] text-white font-pt">
+    <div className=" p-5 z-[2] bg-black mt-[10rem] text-white font-pt">
     <div id="work" className="max-w-[1240px] mx-auto p-20">
       <h2 className="text-2xl font-bold text-center p-4">Work</h2>
 

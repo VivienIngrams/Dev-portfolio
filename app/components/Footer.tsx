@@ -1,20 +1,20 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
 export const Footer: React.FC = () => {
-  const [color, setColor] = useState<string>("transparent");
-  const [textColor, setTextColor] = useState<string>("white");
+  const [color, setColor] = useState<string>("transparent")
+  const [textColor, setTextColor] = useState<string>("white")
 
   useEffect(() => {
     const changeColor = () => {
       if (window.scrollY >= 90) {
-        setColor("white");
-        setTextColor("black");
-      } else {
-        setColor("transparent");
-        setTextColor("white");
+        setColor('black')
+        setTextColor('gray')
+    } else {
+        setColor('transparent')
+        setTextColor('white')
       }
     };
     window.addEventListener("scroll", changeColor);

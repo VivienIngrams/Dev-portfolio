@@ -16,10 +16,10 @@ export const Navbar: React.FC = () => {
   useEffect(() => {
     const changeColor = () => {
         if(window.scrollY >= 90) {
-            setColor('white')
-            setTextColor('black')
+           
+            setTextColor('gray')
         } else {
-            setColor('transparent')
+           
             setTextColor('white')
         }
     }
@@ -28,15 +28,10 @@ export const Navbar: React.FC = () => {
 
   return (
     <div
-      style={{ backgroundColor: `${color}` }}
+      
       className="fixed left-0 top-0 w-full z-10 ease-in duration-300"
     >
       <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
-        {/* <Link href="/">
-          <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl font-moda">
-            V
-          </h1>
-        </Link> */}
         <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
           <li className="p-4">
             <Link href="/">Home</Link>
