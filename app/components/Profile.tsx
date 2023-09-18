@@ -2,12 +2,8 @@
 
 import React, { FC, useEffect, useState } from "react";
 
-interface ProfileProps {
-  heading: string;
-  message: string;
-}
 
-const Profile: FC<ProfileProps> = ({ heading, message }) => {
+const Profile: FC = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -31,8 +27,8 @@ const Profile: FC<ProfileProps> = ({ heading, message }) => {
       scrolled ? "opacity-20" : "opacity-80 ease-out"
     }`}
   >
-        <h2 className="text-5xl font-bold font-moda">{heading}</h2>
-        <p className="py-5 text-xl">{message}</p>
+        <h2 className="text-5xl font-bold font-moda">Vivien Ingrams</h2>
+        <p className="py-5 text-xl">Frontend Web developper</p>
        
       </div>
    

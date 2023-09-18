@@ -10,7 +10,7 @@ interface HomeProps {}
 const Home: React.FC<HomeProps> = () => {
   return (
     <div className="flex flex-col">
-      <Profile heading="Vivien Ingrams" message="Frontend Web Developer" />
+      <Profile />
       <Work work={WorkData} />
     </div>
   );

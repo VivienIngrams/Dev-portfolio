@@ -2,7 +2,6 @@
 
 import { WorkDataItem } from "./WorkData";
 import Image from "next/image";
-import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 
 import { useEffect, useState } from "react";
 
@@ -42,7 +41,7 @@ export const Work: React.FC<WorkProps> = ({ work }) => {
   return (
     <div className=" sm:p-5 z-[2] mt-[10rem] text-white font-pt">
 
-    <div id="work" className="max-w-[1240px] mx-auto mb-20 sm:mb-0 2xl:mb-20">
+    <div id="work" className="max-w-[1240px] mx-auto my-auto">
       <h2 className="text-2xl font-bold text-center p-4">Work</h2>
 
       <div className="relative flex justify-center p-4">
@@ -50,7 +49,7 @@ export const Work: React.FC<WorkProps> = ({ work }) => {
           <div
             key={i}
             className={
-              i === current ? "opacity-[1] ease-in duration-1000" : "opacity-0"
+              i === current ? "opacity-[1] ease-in duration-500" : "opacity-0"
             }
           >
           
@@ -60,6 +59,7 @@ export const Work: React.FC<WorkProps> = ({ work }) => {
                 alt={`Work ${w.image}`}
                 width={1440}
                 height={200}
+              
               />
             )}
          
